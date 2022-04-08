@@ -4,7 +4,7 @@ import styles from './Navbar.module.css';
 
 
 
-const Navbar = () => {
+const Navbar = ({ logout }) => {
     return(
         <Container className={styles.navbar}>
         <div className={styles.logo}>
@@ -13,7 +13,7 @@ const Navbar = () => {
             <div className={styles.buttons}>
             <Link to="/about" className={styles.link}>ABOUT</Link>
             <a href="https://github.com/zeyasar" target='_blank' rel="noopener noreferrer" className={styles.link}>GITHUB</a>
-            <Link to="/" className={styles.link}>LOGOUT</Link>
+            <Link to="/" className={styles.link} onClick={logout} >LOGOUT</Link>
             </div>
         </Container>
     )

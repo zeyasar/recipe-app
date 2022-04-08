@@ -1,12 +1,18 @@
 import kitchen from "../../assets/pot-kitchen.svg";
 import { Form, Button } from "react-bootstrap";
 import styles from "./Login.module.css";
+import { useNavigate } from 'react-router-dom'
 
-const Login = () => {
+
+
+const Login = ({ authenticate }) => {
+
+  const navigate = useNavigate();
+
   const handleSubmitLogin = (e) => {
     e.preventDefault();
-    window.location.href = "/home";
-    localStorage.setItem("isAuth", true);
+    authenticate();
+    navigate("/home");
   };
 
   return (
